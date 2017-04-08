@@ -5,15 +5,16 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgres 
+  adapter: postgresql 
   pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: WebBlog
-  username: postgres
-  password: suman
+  database: blog
+  host: localhost
+  username: blog
+  password: blog
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,10 +23,10 @@ test:
   <<: *default
   database: WebBlog2
   username: postgres
-  password: suman
+  password: postgres
 
 production:
   <<: *default
   database: WebBlog
   username: postgres
-  password: suman
+  password: postgres
