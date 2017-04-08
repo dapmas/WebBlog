@@ -1,9 +1,11 @@
 %h1 Blog Posts
-%h3 Sample Post1
-%p 
- = @posts
 
-%hr
+-@posts.each do |p|
+ = link_to p.title, p
+ %br
+ 
+ =p.body
+ %br
+ %hr
 
-%h3 Sample Post2
-%p This is some sample text number 2 for the blog posts.
+= link_to "Add new post", new_post_path
