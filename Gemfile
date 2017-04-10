@@ -57,3 +57,14 @@ gem 'haml'
 
 #Install heroku for live deployment
 gem 'heroku'
+
+#Install ActiveAdmin
+gem 'activeadmin', '1.0.0.pre5'
+#gem 'activeadmin'
+gem 'devise'
+gem 'cancan'
+#gem 'draper', "3.0.0.pre1"
+
+# Draper needs activemodel-xml which is removed from core package and converted into a standalone gem. You need this to run active admin with draper.
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
+gem 'pundit'
