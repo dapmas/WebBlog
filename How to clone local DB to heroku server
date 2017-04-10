@@ -1,3 +1,6 @@
+*************************** Create Dump ***************************************
+No dump file required for the below command.
+*************************** Clone The DB *****************************************
 1) open your app in heroku
 2) goto Resources
 3) At the bottom click on "Heroku Postgres::Database"
