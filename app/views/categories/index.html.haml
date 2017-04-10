@@ -1,2 +1,7 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+%h1
+  Listing Categories
+
+%ul
+  - @categories.each do |cat|
+    %li
+      = link_to cat.name, category_path(:id => cat.id)

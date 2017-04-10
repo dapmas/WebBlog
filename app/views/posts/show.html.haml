@@ -8,7 +8,12 @@
  = @posts.body
 
 %h4
- = link_to "Edit Post", edit_post_path
- &nbsp; &nbsp; &nbsp; &nbsp; 
- = link_to "Delete", @posts, data:{ :confirm => "Are You Sure?"}, :method => :delete 
+ Catergory:
+ = link_to @posts.category.name, category_path(:id => @posts.category.id)
 
+%p
+ = link_to "Back to all Posts", posts_path
+//%h4
+// = link_to "Edit Post", edit_post_path
+//&nbsp; &nbsp; &nbsp; &nbsp;
+// = link_to "Delete", @posts, data:{ :confirm => "Are You Sure?"}, :method => :delete
