@@ -10,9 +10,11 @@
       %a.author{:href => "#"}
         %span.name
           = @posts.admin_user.name
-        %img{:alt => "", :src => "../assets/avatar.jpg"}/
+        %img
+            = image_tag "avatar.jpg"
   %span.image.featured
-    %img{:alt => "", :src => "../assets/pic01.jpg"}/
+    %img
+        = image_tag "pic01.jpg"
   %p
     = @posts.body
   %p Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.

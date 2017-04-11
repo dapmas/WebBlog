@@ -2,7 +2,7 @@
 
 						<!-- Intro -->
 							<section id="intro">
-								<a href="#" class="logo"><img src="../assets/logo.jpg" alt="" /></a>
+								<a href="#" class="logo"> <%= image_tag "logo.jpg" %></a>
 								<header>
 									<h2>Perfect Blogging</h2>
 									<p>Express your emotions to your Heart's Content.</p>
@@ -56,9 +56,9 @@
 											<header>
 												<h3><%= link_to trending.title, trending %></h3>
 												<time class="published"><%= trending.created_at.strftime("%b %d, %Y") %></time>
-												<a href="#" class="author"><img src="../assets/avatar.jpg" alt="" /></a>
+												<a href="#" class="author"><<%= image_tag "avatar.jpg" %></a>
 											</header>
-											<a href="#" class="image"><img src="../assets/pic04.jpg" alt="" /></a>
+											<a href="#" class="image"><%= image_tag "pic04.jpg" %></a>
 										</article>
 										<% end %>
 

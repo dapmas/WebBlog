@@ -3171,7 +3171,7 @@
 /* Wrapper */
 
 	#wrapper {
-		background: #ffffff url(../bg.png);
+		background: #ffffff url("bg.png");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;

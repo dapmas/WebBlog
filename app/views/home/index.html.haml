@@ -12,9 +12,11 @@
         %a.author{:href => "#"}
           %span.name
             = p.admin_user.name
-          %img{:alt => "", :src => "assets/avatar.jpg"}
+          %img
+            = image_tag "avatar.jpg"
     %a.image.featured{:href => "#"}
-      %img{:alt => "", :src => "assets/pic01.jpg"}
+      %img
+        = image_tag "pic01.jpg"
     %p
       = p.body
     %footer

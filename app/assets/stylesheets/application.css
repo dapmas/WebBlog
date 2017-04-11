@@ -13,5 +13,6 @@
  .
  *= require_self
  */
-//= require css/font-awesome.min
+
 //= require css/main
+//= require css/font-awesome.min
