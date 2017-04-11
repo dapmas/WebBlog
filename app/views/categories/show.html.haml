@@ -1,15 +1,28 @@
-%h2
-  = @category.name
+.text
+  %header.published
+    .title
+      %h2
+        = @category.name
 
-%p
+
+
+.mini-posts#categories_layout
   - if @posts.present?
-    -@posts.each do |post|
-      %h3
-        = link_to post.title, post
+    - @posts.each do |p|
+      %article.mini-post
+        %header
+          %h3
+            = link_to p.title, p
+          %a.author{:href => "#"}
+            %img{:alt => "", :src => "../assets/avatar.jpg"}
+        %a.image{:href => "#"}
+          %img{:alt => "", :src => "../assets/pic03.jpg"}
 
-      %p
-        = post.body
   - else
     %p Sorry! No posts in this category.
-%h3
-  = link_to "Back to Categories", categories_path
+
+
+.text
+  %header
+    %h3
+      = link_to "Back to Categories", categories_path

@@ -1,19 +1,30 @@
-%h1
- = @posts.title
+%article#singlepost.post
+  %header
+    .title
+      %h2
+        = @posts.title
+      %p Lorem ipsum dolor amet nullam consequat etiam feugiat
+    .meta
+      %time.published
+        = @posts.created_at.strftime("%b %d, %Y")
+      %a.author{:href => "#"}
+        %span.name
+          = @posts.admin_user.name
+        %img{:alt => "", :src => "../assets/avatar.jpg"}/
+  %span.image.featured
+    %img{:alt => "", :src => "../assets/pic01.jpg"}/
+  %p
+    = @posts.body
+  %p Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
+  %p Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra.
 
-%small
- = @posts.created_at.strftime("%b %d, %Y")
-
-%p
- = @posts.body
-
-%h4
- Catergory:
- = link_to @posts.category.name, category_path(:id => @posts.category.id)
-
-%p
- = link_to "Back to all Posts", posts_path
-//%h4
-// = link_to "Edit Post", edit_post_path
-//&nbsp; &nbsp; &nbsp; &nbsp;
-// = link_to "Delete", @posts, data:{ :confirm => "Are You Sure?"}, :method => :delete
+  %p
+    = link_to "Back to all Posts", posts_path
+  %footer
+    %ul.stats
+      %li
+        = link_to @posts.category.name, category_path(:id => @posts.category.id)
+      %li
+        %a.icon.fa-heart{:href => "#"} 28
+      %li
+        %a.icon.fa-comment{:href => "#"} 128

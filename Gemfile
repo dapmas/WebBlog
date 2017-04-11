@@ -52,7 +52,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Better and more efficient way of writing html code embedded with ruby. 
+# Better and more efficient way of writing html code embedded with ruby.
 gem 'haml'
 
 #Install heroku for live deployment
@@ -68,3 +68,6 @@ gem 'cancan'
 # Draper needs activemodel-xml which is removed from core package and converted into a standalone gem. You need this to run active admin with draper.
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 gem 'pundit'
+
+#Install the ransack gem for search queries
+gem 'ransack'

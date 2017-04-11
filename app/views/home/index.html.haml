@@ -1,3 +1,31 @@
-%h1 Hi! This is Sampad's Blog.
+- @posts.each do |p|
+  %article#posts_landing.post
+    %header
+      .title
+        %h2
+          = link_to p.title, p
 
-%p Find me in app/views/home/index.html.haml
+        %p This is extra description.
+      .meta
+        %time.published
+          = p.created_at.strftime("%b %d, %Y")
+        %a.author{:href => "#"}
+          %span.name
+            = p.admin_user.name
+          %img{:alt => "", :src => "assets/avatar.jpg"}
+    %a.image.featured{:href => "#"}
+      %img{:alt => "", :src => "assets/pic01.jpg"}
+    %p
+      = p.body
+    %footer
+      %ul.actions
+        %li
+          .button.big
+            = link_to "Continue Reading", p
+      %ul.stats
+        %li
+          = link_to p.category.name, category_path(:id => p.category.id)
+        %li
+          %a.icon.fa-heart{:href => "#"} 28
+        %li
+          %a.icon.fa-comment{:href => "#"} 128

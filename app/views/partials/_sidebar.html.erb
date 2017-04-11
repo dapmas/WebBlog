@@ -1,0 +1,77 @@
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+								<a href="#" class="logo"><img src="../assets/logo.jpg" alt="" /></a>
+								<header>
+									<h2>Perfect Blogging</h2>
+									<p>Express your emotions to your Heart's Content.</p>
+									<p id="nameIntro">By Sampad Medda</p>
+								</header>
+							</section>
+
+							<!-- Posts List -->
+
+								<section>
+									<header>
+										<h3>Trending Categories</h3>
+									</header>
+
+									<ul class="posts">
+										<% all_trendingCategories.each do |cat| %>
+											<li>
+												<article>
+													<header >
+														<h3>
+															<%= link_to cat.name, category_path(:id=>cat.id) %>
+														</h3>
+													</header>
+												</article>
+											</li>
+											<% end %>
+
+											<li>
+												<article>
+													<header >
+														<h3>
+															<%= link_to "... View More", categories_path %>
+														</h3>
+													</header>
+												</article>
+											</li>
+									</ul>
+								</section>
+
+						<!-- Mini Posts -->
+							<section>
+								<header>
+									<h3> trending posts </h3>
+								</header>
+								<div class="mini-posts">
+
+									<!-- Mini Post -->
+
+									<% all_trendingPosts.each do |trending| %>
+										<article class="mini-post">
+											<header>
+												<h3><%= link_to trending.title, trending %></h3>
+												<time class="published"><%= trending.created_at.strftime("%b %d, %Y") %></time>
+												<a href="#" class="author"><img src="../assets/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="../assets/pic04.jpg" alt="" /></a>
+										</article>
+										<% end %>
+
+								</div>
+							</section>
+
+
+
+						<!-- About -->
+							<section class="blurb">
+								<h2>About</h2>
+								<p>This is a blogging platform where users can share articles just about anything. From everlasting memories to scariest of the experiences. Bring out the creative talent and jot down awesome articles.</p>
+								<ul class="actions">
+									<li><a href="/about" class="button">Learn More</a></li>
+								</ul>
+							</section>

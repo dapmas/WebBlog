@@ -1,18 +1,66 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>WebBlog</title>
-    <%= csrf_meta_tags %>
+<%= render "partials/header" %>
+					<section id="menu">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Home</h3>
+											<p>Checkout latest entries</p>
+										</a>
+									</li>
 
-  <body>
-    <% flash.each do |key, value| %>
-    
-    <p><%= value %> </p>
-    <% end %>
-    <%= yield %>
-  </body>
+									<li>
+										<a href="#">
+											<h3>All Posts</h3>
+											<p>Collection of all the articles</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+							<section>
+								<ul class="actions vertical">
+									<li><%= link_to "Log In", admin_root_path, class: "button big fit" %></li>
+								</ul>
+							</section>
+
+					</section>
+
+					<div>
+						<% flash.each do |key, value| %>
+
+						<p><%= value %> </p>
+						<% end %>
+					</div>
+
+				<!-- Main -->
+					<div id="main">
+						<%= yield %>
+
+						<!-- Pagination -->
+						<%= render "partials/pagination" unless @disable_pagination %>
+
+					</div>
+
+          <!-- Sidebar -->
+          <%= render "partials/sidebar" unless @disable_sidebar%>
+						<!-- Footer -->
+							<%= render "partials/footer" unless @disable_footer%>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/jquery.min.js"></script>
+			<script src="../assets/skel.min.js"></script>
+			<script src="../assets/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../assets/main.js"></script>
+
+	</body>
 </html>

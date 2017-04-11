@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WebBlog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+
+
+
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">WebBlog</a></h1>
+						<nav class="links">
+							<ul>
+								<li><%= link_to "Home", root_path %></li>
+								<li><%= link_to "About", about_path%></li>
+								<li><%= link_to "Blog", posts_path%></li>
+								<li><%= link_to "Contact", contact_path%></li>
+								<li><%= link_to "Resources", resources_path%></li>
+							</ul>
+						</nav>
+						<nav class="main">
+
+							<ul>
+
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+								  <%= search_form_for @search,html: { id: "search"} do |f| %>
+
+
+									<%= f.text_field :title_or_body_cont, placeholder: "Search sampy"  %>
+
+									<%= f.submit "Search", id: "search" %>
+
+								<%end %>
+								</li>
+
+								 <li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>

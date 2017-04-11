@@ -12,6 +12,13 @@ ActiveAdmin.register Post do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :title, :body, :category_id
-menu :label => "Blog Posts"
+  permit_params :title, :body, :category_id, :admin_user_id
+  menu :label => "Blog Posts"
+  index do
+    column :title
+    column "Author", :admin_user
+    column :category
+    column :created_at
+    actions
+  end
 end

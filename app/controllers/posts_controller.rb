@@ -1,10 +1,15 @@
 class PostsController < ApplicationController
 	def index
-	  @posts = Post.all
+		@search = Post.search(params[:q])
+	  @posts = @search.result
 	end
-	
+
 	def show
 	  @posts = Post.find(params[:id])
+		@user = AdminUser.all
+		@disable_sidebar = true
+		@disable_footer = true
+		@disable_pagination = true
 
 	end
 
@@ -40,7 +45,7 @@ class PostsController < ApplicationController
 
 	def destroy
           @posts = Post.find(params[:id])
-          
+
           @posts.destroy
           redirect_to posts_path, :notice => "Your Post has been deleted."
 	end
@@ -48,7 +53,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-	  params.require(:post).permit(:title, :body, :category_id)
+	  params.require(:post).permit(:title, :body, :category_id, :admin_user_id)
 	end
 
 end
