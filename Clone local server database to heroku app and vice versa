@@ -1,0 +1,39 @@
+*************************** Create Dump ***************************************
+No dump file required for the below command.
+*************************** Clone The DB *****************************************
+1) open your app in heroku
+2) goto Resources
+3) At the bottom click on "Heroku Postgres::Database"
+4) Find the name of the database of the app on heroku. Here it is "postgresql-cubed-18254"
+5) Use this command to clone the db:
+	a) heroku pg:reset
+	b) PGUSER="Local Database Name" PGPASSWORD="Local Database Password" heroku pg:push "Local Database Name"  "Heroku Database Name" --app "App Name"
+
+	Eg.- PGUSER=blog PGPASSWORD=blog heroku pg:push blog  postgresql-cubed-18254 --app shadow-blog
+
+
+
+*************************** Create Dump ***************************************
+								How to export heroku db to local database
+*************************** Clone The DB *****************************************
+
+Run the following commands : 
+
+	1. heroku pg:backups:capture -- app [App Name]	 
+															Note: This will create heroku deployed app dump with ID.
+
+	2. heroku pg:backups:download [Database ID] --app [App Name]
+
+
+	3. pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump
+
+
+Example : To clone the the database of the shadow-blog app on heroku to local app WebBlog :
+
+	1. heroku pg:backups:capture -- app shadow-blog
+
+	2. heroku pg:backups:download b001 --app shadow-blog
+
+	3. pg_restore --verbose --clean --no-acl --no-owner -h localhost -U blog -d blog latest.dump
+
+And that's it.'
